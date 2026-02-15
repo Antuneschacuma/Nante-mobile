@@ -1,6 +1,7 @@
 import React from 'react';
-import { View, Text, Dimensions, StyleSheet } from 'react-native';
+import { View, Text, Dimensions} from 'react-native';
 import { getCellAtPosition, MAIN_PATH, PlayerColor } from '../config/boardConfig';
+import { styles } from '../styles/index-nante-style';
 
 const GRID_SIZE = 15;
 const SCREEN_WIDTH = Dimensions.get('window').width;
@@ -8,9 +9,7 @@ const CELL_SIZE = Math.floor((SCREEN_WIDTH - 40) / GRID_SIZE);
 
 const IndexNante = () => {
   
-  /**
-   * 🎨 Renderizar célula individual
-   */
+  
   const renderCell = (row: number, col: number) => {
     const cell = getCellAtPosition(row, col);
     
@@ -165,108 +164,3 @@ const IndexNante = () => {
 };
 
 export default IndexNante;
-
-const styles = StyleSheet.create({
-  container: {
-    alignItems: 'center',
-    paddingVertical: 20,
-  },
-  
-  // Header
-  header: {
-    alignItems: 'center',
-    marginBottom: 15,
-  },
-  headerTitle: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    color: '#1A237E',
-    letterSpacing: 0.5,
-  },
-  headerSubtitle: {
-    fontSize: 11,
-    color: '#616161',
-    marginTop: 4,
-  },
-
-  // Tabuleiro
-  boardWrapper: {
-    padding: 8,
-    backgroundColor: '#FFFFFF',
-    borderRadius: 16,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 0.15,
-    shadowRadius: 8,
-    elevation: 8,
-  },
-  boardContainer: {
-    borderWidth: 3,
-    borderColor: '#424242',
-    borderRadius: 8,
-    overflow: 'hidden',
-    backgroundColor: '#FAFAFA',
-  },
-  row: {
-    flexDirection: 'row',
-  },
-  cell: {
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  cellText: {
-    fontWeight: '700',
-  },
-
-  // Legenda dos jogadores
-  playersLegend: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    justifyContent: 'center',
-    gap: 12,
-    marginTop: 20,
-    paddingHorizontal: 20,
-  },
-  playerBadge: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: '#FFFFFF',
-    paddingHorizontal: 12,
-    paddingVertical: 8,
-    borderRadius: 20,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
-    elevation: 3,
-  },
-  colorDot: {
-    width: 12,
-    height: 12,
-    borderRadius: 6,
-    marginRight: 6,
-    borderWidth: 1,
-    borderColor: 'rgba(0,0,0,0.1)',
-  },
-  playerText: {
-    fontSize: 11,
-    fontWeight: '600',
-    color: '#424242',
-  },
-
-  // Info card
-  infoCard: {
-    marginTop: 15,
-    backgroundColor: '#FFF3E0',
-    paddingHorizontal: 16,
-    paddingVertical: 10,
-    borderRadius: 12,
-    borderWidth: 1,
-    borderColor: '#FFB74D',
-  },
-  infoText: {
-    fontSize: 10,
-    color: '#E65100',
-    fontWeight: '600',
-  },
-});
