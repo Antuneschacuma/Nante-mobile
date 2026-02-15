@@ -1,11 +1,17 @@
-import { Text, View } from "react-native";
- 
-export default function Index() {
+import IndexNante from '@/components/Board';
+import React from 'react';
+import { View} from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+
+const Index = () => {
   return (
-    <View className="flex-1 items-center justify-center bg-white">
-      <Text className="text-xl font-bold text-blue-500">
-        Bem vindo ao Nante Mobile!
-      </Text>
-    </View>
+    <SafeAreaView className="flex-1 items-center bg-purple-50" edges={['top', 'left', 'right']}>
+        {/* Tabuleiro */}
+        <View className="px-4">
+          <  IndexNante/>
+        </View>
+    </SafeAreaView>
   );
 }
+
+export default Index;
