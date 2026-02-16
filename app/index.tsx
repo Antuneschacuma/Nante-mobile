@@ -1,6 +1,6 @@
-import IndexNante from '@/components/Board';
+import IndexNante from '@/components/board/Board';
 import React from 'react';
-import { View} from 'react-native';
+import { View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 const Index = () => {

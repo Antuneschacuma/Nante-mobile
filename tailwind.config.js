@@ -8,7 +8,18 @@ module.exports = {
   ],
   presets: [require("nativewind/preset")],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+      nante: {
+        red: {
+          base: '#FFCDD2',
+          border: '#E57373',
+          start: '#EF5350',
+        },
+        // ...
+      }
+    }
+    },
   },
   plugins: [],
 }

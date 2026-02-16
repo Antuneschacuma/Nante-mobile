@@ -1,13 +1,4 @@
-export type PlayerColor = 'red' | 'blue' | 'green' | 'yellow';
-export type CellType = 'normal' | 'start' | 'final';
-
-export interface PathCell {
-  index: number;
-  row: number;
-  col: number;
-  type: CellType;
-  owner?: PlayerColor;
-}
+import { PathCell } from "./types";
 
 export const MAIN_PATH: PathCell[] = [
 
@@ -73,5 +64,11 @@ export const MAIN_PATH: PathCell[] = [
 
 export const SAFE_POSITIONS = [6, 20, 34, 48];
 
-export const getCellAtPosition = (row: number, col: number) => 
-  MAIN_PATH.find(c => c.row === row && c.col === col) || null;
+export const CELL_MAP = new Map<string, PathCell>();
+
+MAIN_PATH.forEach(cell => {
+  CELL_MAP.set(`${cell.row}-${cell.col}`, cell);
+});
+
+export const getCellAtPosition = (row: number, col: number) =>
+  CELL_MAP.get(`${row}-${col}`) || null;
